@@ -1,0 +1,130 @@
+
+Setting environment for using XAMPP for Windows.
+2022asp48@CL2-28 c:\xampp
+# mysql -u root -p
+Enter password:
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 8
+Server version: 10.4.32-MariaDB mariadb.org binary distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> show databases;
++--------------------+
+| Database           |
++--------------------+
+| 2020asp62          |
+| a23053             |
+| bank               |
+| bfl                |
+| bookboat           |
+| bookdb             |
+| bookstore          |
+| company            |
+| companydb          |
+| englishfi          |
+| hospital           |
+| ica2               |
+| icae02             |
+| ict4191icae04      |
+| information_schema |
+| inventory          |
+| it1223db           |
+| it15108            |
+| library            |
+| librarysystem      |
+| mysql              |
+| performance_schema |
+| phpmyadmin         |
+| project            |
+| retail_store       |
+| spjbase            |
+| studendb           |
+| studentdb          |
+| test               |
++--------------------+
+29 rows in set (0.055 sec)
+MariaDB [(none)]> use UOV;
+Database changed
+MariaDB [UOV]> CREATE TABLE Student (STU_ID VARCHAR(15),NAME VARCHAR(30),COURSE VARCHAR(30),DOB DATE,CITY VARCHAR(20));
+Query OK, 0 rows affected (0.011 sec)
+
+MariaDB [UOV]> desc Student;
++--------+-------------+------+-----+---------+-------+
+| Field  | Type        | Null | Key | Default | Extra |
++--------+-------------+------+-----+---------+-------+
+| STU_ID | varchar(15) | YES  |     | NULL    |       |
+| NAME   | varchar(30) | YES  |     | NULL    |       |
+| COURSE | varchar(30) | YES  |     | NULL    |       |
+| DOB    | date        | YES  |     | NULL    |       |
+| CITY   | varchar(20) | YES  |     | NULL    |       |
++--------+-------------+------+-----+---------+-------+
+5 rows in set (0.021 sec)
+
+MariaDB [UOV]> insert into Student values('2022/asp/48','Jihaasika','AMC','2002-02-10','Vavuniya');
+Query OK, 1 row affected (0.034 sec)
+MariaDB [UOV]> select *from Student;
++-------------+-----------+--------+------------+----------+
+| STU_ID      | NAME      | COURSE | DOB        | CITY     |
++-------------+-----------+--------+------------+----------+
+| 2022/asp/48 | Jihaasika | AMC    | 2002-02-10 | Vavuniya |
++-------------+-----------+--------+------------+----------+
+1 row in set (0.000 sec)
+
+
+
+MariaDB [UOV]> create table Staff_Details(PhysicianID VARCHAR(10),Name varchar(40),Position varchar(40));
+Query OK, 0 rows affected (0.017 sec)
+
+MariaDB [UOV]> desc Staff_Details;
++-------------+-------------+------+-----+---------+-------+
+| Field       | Type        | Null | Key | Default | Extra |
++-------------+-------------+------+-----+---------+-------+
+| PhysicianID | varchar(10) | YES  |     | NULL    |       |
+| Name        | varchar(40) | YES  |     | NULL    |       |
+| Position    | varchar(40) | YES  |     | NULL    |       |
++-------------+-------------+------+-----+---------+-------+
+3 rows in set (0.016 sec)
+MariaDB [UOV]> insert into Staff_Details values('1','John Dorian','Staff Internist');
+Query OK, 1 row affected (0.004 sec)
+
+MariaDB [UOV]> Select *from Staff_Details;
++-------------+-------------+-----------------+
+| PhysicianID | Name        | Position        |
++-------------+-------------+-----------------+
+| 1           | John Dorian | Staff Internist |
++-------------+-------------+-----------------+
+1 row in set (0.000 sec)
+MariaDB [UOV]> insert into Staff_Details values('1','Elliot Reid','Attending Physician');
+Query OK, 1 row affected (0.004 sec)
+
+MariaDB [UOV]> insert into Staff_Details values('3','Chritoper Turk','Surgical Attending Physician');
+Query OK, 1 row affected (0.004 sec)
+
+MariaDB [UOV]> insert into Staff_Details values('4','Percival Cox','Senior Attending Physician');
+Query OK, 1 row affected (0.004 sec)
+
+MariaDB [UOV]> insert into Staff_Details values('5','Keith Dudemeister','MD Resident');
+Query OK, 1 row affected (0.007 sec)
+
+MariaDB [UOV]> insert into Staff_Details values('6','Molly Clock','Attending Phychiatrist');
+Query OK, 1 row affected (0.004 sec)
+MariaDB [UOV]> Select *from Staff_Details;
++-------------+-------------------+------------------------------+
+| PhysicianID | Name              | Position                     |
++-------------+-------------------+------------------------------+
+| 1           | John Dorian       | Staff Internist              |
+| 1           | Elliot Reid       | Attending Physician          |
+| 3           | Chritoper Turk    | Surgical Attending Physician |
+| 4           | Percival Cox      | Senior Attending Physician   |
+| 5           | Keith Dudemeister | MD Resident                  |
+| 6           | Molly Clock       | Attending Phychiatrist       |
++-------------+-------------------+------------------------------+
+6 rows in set (0.000 sec)
+
+
+conclution
+We studied ho to craete the database and use the database 
+how to enter the datas in database
