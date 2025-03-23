@@ -97,7 +97,7 @@ MariaDB [UOV]> Select *from Staff_Details;
 | 1           | John Dorian | Staff Internist |
 +-------------+-------------+-----------------+
 1 row in set (0.000 sec)
-MariaDB [UOV]> insert into Staff_Details values('1','Elliot Reid','Attending Physician');
+MariaDB [UOV]> insert into Staff_Details values('2','Elliot Reid','Attending Physician');
 Query OK, 1 row affected (0.004 sec)
 
 MariaDB [UOV]> insert into Staff_Details values('3','Chritoper Turk','Surgical Attending Physician');
@@ -116,7 +116,7 @@ MariaDB [UOV]> Select *from Staff_Details;
 | PhysicianID | Name              | Position                     |
 +-------------+-------------------+------------------------------+
 | 1           | John Dorian       | Staff Internist              |
-| 1           | Elliot Reid       | Attending Physician          |
+| 2           | Elliot Reid       | Attending Physician          |
 | 3           | Chritoper Turk    | Surgical Attending Physician |
 | 4           | Percival Cox      | Senior Attending Physician   |
 | 5           | Keith Dudemeister | MD Resident                  |
@@ -126,5 +126,7 @@ MariaDB [UOV]> Select *from Staff_Details;
 
 
 conclution
-We studied ho to craete the database and use the database 
+
+We studied how to create the database and use the database 
 how to enter the datas in database
+how to see tha datas in data Base 
