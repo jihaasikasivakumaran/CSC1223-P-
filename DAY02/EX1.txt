@@ -1,0 +1,5 @@
+LOAD DATA LOCAL INFILE'C:/Users/Admin/Desktop/DATABASE/DAY02/RESULTS.csv'
+INTO TABLE Result 
+FIELDS TERMINATED BY '\t'
+LINES TERMINATED BY '\n'
+(Stu_Id,Name,Age,Grade,Country);

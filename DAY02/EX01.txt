@@ -1,0 +1,155 @@
+
+Setting environment for using XAMPP for Windows.
+Admin@DESKTOP-BDBN9MR c:\xampp
+# mysql -u root -p
+Enter password:
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 8
+Server version: 10.4.32-MariaDB mariadb.org binary distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> use uov
+Database changed
+MariaDB [uov]> create table patien(patientID int primary key,Name vachar(30),Address varchar(60),PhoneNo varchar(15))MariaDB [uov]> create table patien(patientID int primary key,Name varchar(30),Address varchar(60),PhoneNo varchar(15));
+Query OK, 0 rows affected (0.018 sec)
+
+MariaDB [uov]> desc patien;
++-----------+-------------+------+-----+---------+-------+
+| Field     | Type        | Null | Key | Default | Extra |
++-----------+-------------+------+-----+---------+-------+
+| patientID | int(11)     | NO   | PRI | NULL    |       |
+| Name      | varchar(30) | YES  |     | NULL    |       |
+| Address   | varchar(60) | YES  |     | NULL    |       |
+| PhoneNo   | varchar(15) | YES  |     | NULL    |       |
++-----------+-------------+------+-----+---------+-------+
+4 rows in set (0.014 sec)
+
+MariaDB [uov]> INSERT INTO patien(patientID,Name,Address,PhoneNo)values
+    -> (100000001,'John Smith','42 Foobay lane','555_0256'),
+    -> (100000002,'Grace Ritchie','37 Snafu drive','555_0512'),
+    -> (100000003,'Todd Quinla','101 Ombbq street','555_1204'),
+    -> (100000004,'Dennis Doe','1100 Fobaz Avenue','555_2048');
+Query OK, 4 rows affected (0.011 sec)
+Records: 4  Duplicates: 0  Warnings: 0
+
+MariaDB [uov]> select *from patien;
++-----------+---------------+-------------------+----------+
+| patientID | Name          | Address           | PhoneNo  |
++-----------+---------------+-------------------+----------+
+| 100000001 | John Smith    | 42 Foobay lane    | 555_0256 |
+| 100000002 | Grace Ritchie | 37 Snafu drive    | 555_0512 |
+| 100000003 | Todd Quinla   | 101 Ombbq street  | 555_1204 |
+| 100000004 | Dennis Doe    | 1100 Fobaz Avenue | 555_2048 |
++-----------+---------------+-------------------+----------+
+4 rows in set (0.000 sec)
+
+MariaDB [uov]>  delete from patien;
+Query OK, 4 rows affected (0.012 sec)
+
+MariaDB [uov]> select *from patien;
+Empty set (0.000 sec)
+
+MariaDB [uov]> show tables;
++---------------+
+| Tables_in_uov |
++---------------+
+| patien        |
+| stuents       |
++---------------+
+2 rows in set (0.001 sec)
+
+MariaDB [uov]> drop table patien;
+Query OK, 0 rows affected (0.010 sec)
+
+MariaDB [uov]> show tables;
++---------------+
+| Tables_in_uov |
++---------------+
+| stuents       |
++---------------+
+1 row in set (0.001 sec)
+
+MariaDB [uov]> create database workers;
+Query OK, 1 row affected (0.011 sec)
+
+MariaDB [uov]> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| phpmyadmin         |
+| test               |
+| uov                |
+| uova               |
+| workers            |
++--------------------+
+8 rows in set (0.002 sec)
+
+MariaDB [uov]> drop database workers;
+Query OK, 0 rows affected (0.004 sec)
+
+MariaDB [uov]> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| phpmyadmin         |
+| test               |
+| uov                |
+| uova               |
++--------------------+
+7 rows in set (0.001 sec)
+
+MariaDB [uov]> create table Result(Stu_Id int primary key,Name varchar(30),Age int,Grade char(1),Country varchar(30));
+Query OK, 0 rows affected (0.016 sec)
+
+MariaDB [uov]> LOAD DATA LOCAL INFILE'C:/Users/Admin/Desktop/DATABASE/DAY02/RESULTS.csv'
+    -> INTO TABLE Result
+    -> FIELDS TERMINATED BY '\t'
+    -> LINES TERMINATED BY '\n'
+    -> (Stu_Id,Name,Age,Grade,Country);
+Query OK, 6 rows affected (0.006 sec)
+Records: 6  Deleted: 0  Skipped: 0  Warnings: 0
+
+MariaDB [uov]> select *from Result;
++--------+---------+------+-------+-------------+
+| Stu_Id | Name    | Age  | Grade | Country     |
++--------+---------+------+-------+-------------+
+   |   1 | Alice   |   20 | A     | New York
+    |  2 | Bob     |   22 | B     | Chicago
+   |   3 | Charlie |   21 | A     | New York
+     | 4 | David   |   23 | C     | Bostan
+    |  5 | Emma    |   22 | B     | Chicago
+|      6 | Frank   |   20 | A     | Los Angels  |
++--------+---------+------+-------+-------------+
+6 rows in set (0.001 sec)
+
+MariaDB [uov]>
+
+
+Conclution: I learned about 
+                 1.How to create and delete database.
+				 2.How to create and delete tables.
+				 3.How to show the Data bases and tables.
+				 4.How to Enter the data in Another method 
+				 (Create the table in XAMPP 
+				 ,used notepade++ and enter the data and saved the data in .csv Extension,
+				 LOAD DATA LOCAL INFILE'C:/Users/Admin/Desktop/DATABASE/DAY02/RESULTS.csv'
+				 INTO TABLE Result 
+				 FIELDS TERMINATED BY '\t'
+				 LINES TERMINATED BY '\n'
+				 (Stu_Id,Name,Age,Grade,Country);
+				  
+				  typed data with coma '\t' its typed ','
+				  Result it is file name
+				   
+				  
+													
+				 
